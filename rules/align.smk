@@ -3,9 +3,9 @@ rule star_align:
         fastq="data/{sample}.fastq.gz"
     output:
         bam="results/aligned/{sample}Aligned.sortedByCoord.out.bam"
-    threads: 4  # Balanced for local laptop execution
+    threads: 2  # Matches Minikube allotment
     resources:
-        mem_mb=16000 
+        mem_mb=4000 # Reduced to 4GB so it fits cleanly inside your 6GB cluster limit
     shell:
         """
         STAR --runThreadN {threads} \
