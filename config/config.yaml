@@ -1,0 +1,8 @@
+samples:
+  - "sample1"
+  - "sample2"
+  - "sample3"
+
+# Points to your local genome indices on your laptop
+star_index: "resources/reference/star_index"
+

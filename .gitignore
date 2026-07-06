@@ -1,0 +1,5 @@
+.snakemake/
+results/
+data/
+*.json
+.pytest_cache/
