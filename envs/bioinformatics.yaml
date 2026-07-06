@@ -1,0 +1,16 @@
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python=3.11
+  - snakemake
+  - fastqc
+  - cutadapt
+  - star
+  - samtools
+  - subread
+  - r-base
+  - bioconductor-edger
+  - google-api-python-client
+  - google-auth-oauthlib
+
