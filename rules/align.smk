@@ -3,16 +3,16 @@ rule star_align:
         fastq="data/{sample}.fastq.gz"
     output:
         bam="results/aligned/{sample}Aligned.sortedByCoord.out.bam"
-    threads: 2  # Matches Minikube allotment
+    threads: 2  
     resources:
-        mem_mb=4000 # Reduced to 4GB so it fits cleanly inside your 6GB cluster limit
+        mem_mb=4000 
     shell:
         """
         STAR --runThreadN {threads} \
              --genomeDir {config[star_index]} \
              --readFilesIn {input.fastq} \
              --readFilesCommand zcat \
-             --outFileNamePrefix results/aligned/{sample} \
+             --outFileNamePrefix results/aligned/{wildcards.sample} \
              --outSAMtype BAM SortedByCoordinate
         """
 
